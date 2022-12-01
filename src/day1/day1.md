@@ -59,7 +59,7 @@ Find the Elf carrying the most Calories. How many total Calories is that
 Elf carrying?
 
 ``` r
-raw <- readLines("./data/day1.txt")
+raw <- readLines("../../data/day1.txt")
 
 library(dplyr)
 ```
@@ -120,3 +120,45 @@ elf_data$raw[1:3] %>% sum()
 ```
 
     ## [1] 211189
+
+``` r
+library(ggplot2)
+library(plotly)
+```
+
+    ## 
+    ## Attaching package: 'plotly'
+
+    ## The following object is masked from 'package:ggplot2':
+    ## 
+    ##     last_plot
+
+    ## The following object is masked from 'package:stats':
+    ## 
+    ##     filter
+
+    ## The following object is masked from 'package:graphics':
+    ## 
+    ##     layout
+
+``` r
+plot_ly(elf_data, x = ~ raw, y = ~ nrow(elf_data):1)
+```
+
+    ## No trace type specified:
+    ##   Based on info supplied, a 'scatter' trace seems appropriate.
+    ##   Read more about this trace type -> https://plotly.com/r/reference/#scatter
+
+    ## No scatter mode specifed:
+    ##   Setting the mode to markers
+    ##   Read more about this attribute -> https://plotly.com/r/reference/#scatter-mode
+
+![](day1_files/figure-gfm/unnamed-chunk-3-1.png)<!-- -->
+
+``` r
+plot_ly(elf_data, x = ~ raw, y = ~ nrow(elf_data):1, type = 'scatter', mode = 'markers') %>%
+  layout(title = "Elf carrying calories", xaxis = list(title = 'Calories'), 
+         yaxis = list(title = 'Ranked elves'))
+```
+
+![](day1_files/figure-gfm/unnamed-chunk-3-2.png)<!-- -->

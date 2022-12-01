@@ -44,7 +44,7 @@ In case the Elves get hungry and need extra snacks, they need to know which Elf 
 Find the Elf carrying the most Calories. How many total Calories is that Elf carrying?
 
 ```{r}
-raw <- readLines("./data/day1.txt")
+raw <- readLines("../../data/day1.txt")
 
 library(dplyr)
 
@@ -80,4 +80,3 @@ Find the top three Elves carrying the most Calories. How many Calories are those
 # Part 2 solution:
 elf_data$raw[1:3] %>% sum()
 ```
-
