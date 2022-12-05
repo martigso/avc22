@@ -1,5 +1,5 @@
 ---
-title: "Advent of Code 2022 -- Day 2"
+title: "Advent of Code 2022 -- Day 5"
 author: "Martin Søyland"
 output: github_document
 ---
@@ -60,6 +60,7 @@ After the rearrangement procedure completes, what crate ends up on top of each s
 
 ```{r}
 # Restructuring data (there must be a better way)
+library(stringr)
 
 input <- readLines("../../data/day5.txt")
 
